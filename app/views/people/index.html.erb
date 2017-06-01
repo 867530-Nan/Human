@@ -1,0 +1,20 @@
+<h1>Here's a List of all your friends</h1>
+
+<%= link_to 'Create New Friend', new_person_path %>
+
+<% if @people.empty? %>
+
+	<h3>Bummer Dude, looks like you have no friends</h3>
+<% else %>
+	<ul>
+		<% @people.each do |person| %>
+		<li>
+			<%= link_to person.name, person_path(person) %>
+			<span> | </span>
+			<%= link_to 'Edit Person', edit_person_path(person) %>
+			<span> | </span>
+			<%= link_to 'Kill Me', person_path(person), method: :delete %>
+		</li>
+		<% end %>
+	</ul>
+<% end %>

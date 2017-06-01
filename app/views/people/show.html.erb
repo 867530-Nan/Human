@@ -1,0 +1,15 @@
+
+<h3>You have a friend named <%= @person.name %></h3>
+
+<ul>
+	<li> They are <%= @person.age %> years old</li>
+	<li> They have <%= @person.hair_color %> hair </li>
+	<li> They have <%= @person.eye_color %> eyes </li>
+	<li> They are <%= @person.gender %> </li>
+	<li> <%= @person.alive ? 'Your Friend is Alive' : 'Saddly, your friend is dead' %> </li>
+</ul>
+
+<%= link_to 'Update information', edit_person_path %> 
+<br />
+<br />
+<%= link_to 'Back to Friends List', root_path %>
